@@ -13,10 +13,13 @@ body {
 	align-items: center;
 }
 
+div#comparison, div#average, header {
+	width: 70%;
+	min-width: 700px;
+}
+
 div#comparison {
 	background-color:  #E5EAEE;
-	width: 70%;
-	min-width: 500px;
 	display: flex;
 	justify-content: space-around;
 	padding-top: 20px;
@@ -24,8 +27,6 @@ div#comparison {
 
 div#average {
 	background-color:  #E5EAEE;
-	width: 70%;
-	min-width: 400px;
 	text-align: center;
 	font-size: 20px;
 	height: 500px;
@@ -69,8 +70,6 @@ span.cityname {
 
 header {
 	background-color: #003680;
-	width: 70%;
-	min-width: 400px;
 	display: flex;
 	justify-content: flex-start;
 	padding-top: 10px;
