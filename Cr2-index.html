@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="cr2-styles.css">		
+	<!--<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">-->
+	<title>Code Review 2 by Clemens Ziegler</title>
+</head>
+<body>
+	<header id="header" class="">
+		<img id="logo" src="cr2-logo.png" alt="logo">
+		<h1>Price Comparison</h1>
+	</header>
+	<div id="comparison">
+		<div id="amsterdam" class="city">
+			<img src="cr2-amsterdam.jpg" alt="amsterdam canal and bridge">
+			<div class="firstrow">
+				<span class="cityname" id="ams_name"></span>
+				<span id="ams_avg"></span>
+			</div>
+			<div class="secondrow">
+				<span id="ams_country"></span>
+				<span><p>Average price</p></span>
+			</div>
+		</div>
+		<div id="london" class="city">
+			<img src="cr2-london.jpg" alt="london big ben">
+			<div class="firstrow">
+				<span class="cityname" id="lon_name"></span>
+				<span id="lon_avg"></span>
+			</div>
+			<div class="secondrow">
+				<span id="lon_country"></span>
+				<span><p>Average price</p></span>
+			</div>
+		</div>
+	</div>
+	<div id="average">
+		<div id ="message"></div>
+		<p>Difference in price</p>
+		<span id ="averageprice"></span>
+	</div>
+<script>
+
+var ams_name = "Amsterdam";
+var ams_country = "<p>Netherlands<p>";
+var ams_prices = [1500, 500, 1800, 700];
+var ams_avg;
+
+var lon_name ="London";
+var lon_country="<p>United Kingdom</p>";
+var lon_prices = [2500, 1500, 1000, 900];
+var lon_avg;
+
+var price_diff;
+var diff_msg;
+
+ams_avg = avgprice(ams_prices);
+lon_avg = avgprice(lon_prices);
+price_diff = Math.abs (ams_avg - lon_avg);
+
+if (ams_avg < lon_avg) {
+	diff_msg = "<b>" + ams_name + "</b> will be more affordable than <b>" + lon_name + "</b> for the New Year's celebration";
+}
+else if (lon_avg < ams_avg) {
+	diff_msg = "<p><b>" + lon_name + "</b> will be more affordable than <b>" + ams_name + "</b> for the New Year's celebration</p>";
+}
+else {
+	diff_msg ="<p>Each city is as affordable as the other. Enjoy your stay in <b>" + ams_name +"</b> or <b>" + lon_name + "</b><p>";
+}
+
+(document.getElementById('ams_name')).innerHTML = "<h2>" + ams_name + "</h2>";
+(document.getElementById('ams_country')).innerHTML = ams_country;
+(document.getElementById('ams_avg')).innerHTML = "<h2>" + ams_avg + "&euro;</h2>";
+(document.getElementById('lon_name')).innerHTML = "<h2>" + lon_name + "</h2>";
+(document.getElementById('lon_country')).innerHTML = lon_country;
+(document.getElementById('lon_avg')).innerHTML = "<h2>" + lon_avg + "&euro;</h2>";
+(document.getElementById('message')).innerHTML = diff_msg;
+(document.getElementById('averageprice')).innerHTML = price_diff + "&euro;";
+
+function avgprice(prices)
+{
+	
+	// document.write(prices);
+	var average = 0;
+	var length = prices.length; // i don't know, why it doesn't work directly
+
+	for (i=0; i<length; i++)
+	{
+		average += prices[i];
+		// document.write("<br>average pos: " + i + " avg: " + average);
+	}
+
+	average = average / length; 
+
+	// document.write ("<br>prices.length:" + prices.length + "length: " + length);
+	// document.write ("<br> final average:" + average);
+	return average;
+}
+
+</script>
+</body>
+</html>

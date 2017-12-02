@@ -1,0 +1,99 @@
+/* reset everything*/
+
+ul,li,nav, section, footer, figure, h1, p, h2 {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: lightgrey;
+	font-family: Montserrat,Arial,sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+div#comparison {
+	background-color:  #E5EAEE;
+	width: 70%;
+	min-width: 500px;
+	display: flex;
+	justify-content: space-around;
+	padding-top: 20px;
+}
+
+div#average {
+	background-color:  #E5EAEE;
+	width: 70%;
+	min-width: 400px;
+	text-align: center;
+	font-size: 20px;
+	height: 500px;
+	padding-top: 20px;
+}
+
+div#average > * {
+	padding: 5px;
+}
+
+div#average > p {
+	margin-bottom: 20px;
+}
+
+div.city {
+	width: 45%;
+	background-color: #FFFFFF;
+	box-shadow: 0px 0px 1px 1px darkgrey;
+
+}
+
+div.city > img {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+div.firstrow, div.secondrow {
+	display: flex;
+	justify-content: space-between;
+}
+
+div.firstrow > *, div.secondrow > * {
+	padding: 3px;
+	color:  grey;
+}
+
+span.cityname {
+	color: #21A6D3;
+}
+
+header {
+	background-color: #003680;
+	width: 70%;
+	min-width: 400px;
+	display: flex;
+	justify-content: flex-start;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: white;
+}
+
+img#logo {
+	width: 40px;
+	height: 40px;
+	padding-left: 40px;
+	padding-right: 25px;
+}
+
+span#averageprice {
+	background-color: #21A6D3;
+	font-size: 30pt;
+	font-weight: bold; 
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: white;
+	border-radius: 10px;
+}
+
